@@ -1,0 +1,14 @@
+<div class="absolute border-solid border-2 border-666 modal">
+  <h1><b>Details</b> {{obj.name}}</h1>
+  <p><b>Model: </b>{{obj.model}}</p>
+  <p><b>Manufacturer: </b>{{obj.manufacturer}}</p>
+  <p><b>Cost_in_credits: </b>{{obj.cost_in_credits}}</p>
+  <p><b>Max_atmosphering_speed: </b>{{obj.max_atmosphering_speed}}</p>
+  <p><b>Crew: </b>{{obj.crew}}</p>
+  <p><b>Cargo_capacity: </b>{{obj.cargo_capacity}}</p>
+  <p><b>Consumables: </b>{{obj.consumables}}</p>
+  <p><b>Hyperdrive_rating: </b>{{obj.hyperdrive_rating}}</p>
+  <p><b>MGLT:</b>{{obj.MGLT}}</p>
+  <p><b>Pilots:</b>{{obj.pilots}}</p>
+  <button (click)="close()" class="absolute top-5 right-5 hover:text-red-600 border-2">X</button>
+</div>

@@ -1,0 +1,28 @@
+<!-- *ngFor="let i of images" [ngStyle]="{ backgroundImage: 'url(' + i + ')', 'background-repeat': 'no-repeat', 'height':'503px'}" -->
+<div class="flex justify-center gap-5 flex-wrap xl:container xl:mx-auto xl:gap-x-72 xl:maxiimum  xl:gap-y-36">
+
+
+  <mat-card class="example-card" *ngFor="let inform of res">
+
+    <mat-card-header>
+      <h2 class="center text-white">{{inform.title}}</h2>
+
+    </mat-card-header>
+
+    <mat-card-content class="content">
+
+      <p>
+        {{inform.opening_crawl}}
+      </p>
+      <br>
+      <p><span class="font-bold text-white">Producer</span>: {{inform.producer}}</p>
+      <p><span class="font-bold text-white">Release date</span>: {{inform.release_date | date: 'dd.MM.yyy'}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+
+
+    </mat-card-actions>
+    <a [routerLink]="['/films', inform.url.slice(-2, -1)]" class="text-white" mat-button>More Info</a>
+  </mat-card>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,7 @@
+<app-login *ngIf="!loged"></app-login>
+<div *ngIf="loged" class="bg-black flex justify-between p-3 mb-4 sticky top-0 z-10 border-4 border-yellow-300">
+  <a href="/" class="text-yellow-300 hover:text-white"><b>Menu</b></a>
+  <h1 class="text-yellow-300">Welcome young Padawan <b>{{loginName | titlecase}}</b></h1>
+  <button (click)="logOut()" class="text-yellow-300 hover:text-white"><b>LogOut</b></button>
+</div>
+<router-outlet *ngIf="loged"></router-outlet>

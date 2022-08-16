@@ -1,0 +1,7 @@
+<div class="flex flex-col w-80 gap-y-5 log">
+  <h1 class="text-yellow-300 text-center"><b>SWAPI</b></h1>
+  <input type="text" [(ngModel)]="login">
+  <input type="password" [(ngModel)]="password">
+  <h2 *ngIf="err" class="text-center text-red-600"><b>{{text}}</b></h2>
+  <button (click)="log()" class="btn">Login</button>
+</div>

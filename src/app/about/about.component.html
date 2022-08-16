@@ -1,0 +1,65 @@
+<div class="about">
+  <div class="shortInfo">
+    <h1 class="text-white">{{allInfo?.title}}</h1>
+    <p>{{allInfo?.opening_crawl}}</p>
+    <p><b class="text-white">Created: </b>{{allInfo?.release_date | date:'dd.MM.yyy'}}</p>
+  </div>
+  <hr>
+  <h2>List of starships</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Starship_class</th>
+      <th>Passengers</th>
+      <th>Length</th>
+      <th>Created</th>
+    </tr>
+    <tr *ngFor="let i of starships" (click)="modalInfo(i)">
+      <td>{{i.name}}</td>
+      <td>{{i.starship_class}}</td>
+      <td>{{i.passengers}}</td>
+      <td>{{i.length}}</td>
+      <td>{{i.created | date}}</td>
+    </tr>
+  </table>
+  <hr>
+  List of people
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Height</th>
+      <th>Mass</th>
+      <th>Created</th>
+    </tr>
+    <tr *ngFor="let i of people" (click)="modalPeople(i)">
+      <td>{{i.name}}</td>
+      <td>{{i.gender}}</td>
+      <td>{{i.height}}</td>
+      <td>{{i.mass}}</td>
+      <td>{{i.created | date}}</td>
+    </tr>
+  </table>
+  <hr>
+  List of planets
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Climate</th>
+      <th>Gravity</th>
+      <th>Population</th>
+      <th>Created</th>
+    </tr>
+    <tr *ngFor="let i of planets" (click)="modalPlanets(i)">
+      <td>{{i.name}}</td>
+      <td>{{i.climate}}</td>
+      <td>{{i.gravity}}</td>
+      <td>{{i.population}}</td>
+      <td>{{i.created | date}}</td>
+    </tr>
+  </table>
+  <app-modal *ngIf="modal === 1" [obj]="i" [modal]="modal" (closing)="modal = 0"></app-modal>
+  <app-planets-table *ngIf="modal === 2" [planetObj]="i" (closing)="modal = 0"></app-planets-table>
+  <app-people-table *ngIf="modal === 3" [peopleObj]="i" (closing)="modal = 0"></app-people-table>
+</div>
+<router-outlet></router-outlet>
